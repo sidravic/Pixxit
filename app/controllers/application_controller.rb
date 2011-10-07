@@ -3,6 +3,9 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :current_user_session, :photo_set_owner?
   clear_helpers
 
+  def pushed
+    puts "Params -#{params.inspect} "
+  end
 
   def render_404
     return(render :status => 404, :file => '/public/404.html', :layout => false)

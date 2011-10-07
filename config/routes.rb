@@ -29,7 +29,7 @@ PhotoBlog::Application.routes.draw do
 
   match "login" => "user_session#login", :as => :login, :via => :get
   match "logout" => "user_session#destroy", :as => :logout, :via => :delete
-
+  match "/pushed" => "application#pushed", :via => :post
 
   root :to => "user_session#login"
 
