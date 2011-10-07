@@ -19,6 +19,7 @@ gem "haml"
 gem 'will_paginate'
 gem "xml-simple"
 gem "heroku"
+gem "ci_reporter"
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
