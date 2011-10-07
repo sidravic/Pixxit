@@ -1,0 +1,52 @@
+<%= render :partial => "title" %>
+
+<div id="block">
+  <%= render :partial => "layouts/error_display", :locals => {:resource => @post, :main_error_msg => "Please fix these errors to proceed"} %>
+  <div class="standard-block">
+    <%= form_for :post, @post, :url => user_post_url(@user), :html => {:method => :put, :class => "form", :multipart => true} do |f| %>
+
+        <% @post.images.each do |image| %>
+            <% unless image.new_record? %>
+                <%= image_tag image.photo(:medium), :width => "460", :class => "image" %>
+                <div id='image-options'>
+                  <%= link_to "[ Remove ]", user_post_image_url(@user, @post, image), :method => :delete, :confirm => "Are you sure you want to delete this image from the photoset?" %>
+                </div>
+                <div class="clear"></div>
+            <% end %>
+        <% end %>
+
+        <%= render :partial => "form", :locals => {:f => f} %>
+
+        <div class="group">
+          <%= f.submit "Update", :class => "button" %>
+          <button>
+            <%= link_to "Cancel", user_posts_url, :class => "button"%>
+          </button>
+        </div>
+    <% end %>
+  </div>
+</div>
+
+<style>
+
+    #image-options{
+        float:right;
+        width:60px;
+
+    }
+    #image-options a{
+        font-size:11px;
+        color:#fff;
+        text-decoration:none;
+    }
+
+    #image-options a:hover{
+        color:#eee;
+        text-decoration:underline;
+    }
+
+    .button{
+        text-decoration:none;
+        color:#000;
+    }
+</style>

@@ -1,0 +1,35 @@
+<div class="group">
+  <label class="label"> Title </label>
+  <%= f.text_field :title, :class => "text_field" %>
+</div>
+
+<div class="group">
+  <label class="label"> Description </label>
+  <%= f.text_area :description, :size => "4x10", :class => "text_area" %>
+</div>
+
+<div class="group">
+
+  <%= f.fields_for :images do |img| %>
+      <% if img.object.new_record? %>
+          <%= render :partial => "posts/image_fields", :locals => {:builder => img} %>
+      <% end %>
+  <% end %>
+
+
+  <%#= post_add_image_fields "Add another photo", f, :images %>
+
+
+</div>
+
+<style>
+
+
+    .add-more-link{
+        text-decoration:underline;
+        font-weight:normal;
+        font-size:12px;
+        color:#CCC;
+
+    }
+</style>

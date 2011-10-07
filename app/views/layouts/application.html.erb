@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PhotoBlog</title>
+  <%= stylesheet_link_tag 'application','themes/default/default',  'themes/pascal/pascal', 'themes/orman/orman', 'nivo-slider' %>
+  <%= javascript_include_tag "jquery", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js", "jquery.nivo.slider.pack", "rails", "application" %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+<div id="container">
+  <div id="header">
+    <div id="blog-title">
+      <% unless current_user %>
+        Pixxit <span style="font-family:chalkduster; font-size:12px; font-style:italic; color:maroon"> - Tell your story</span>
+      <% else %>
+        <%= yield :title %> |
+        <%= link_to "Home", user_posts_url(current_user), :class =>'link' %>
+      <% end  %>
+
+    </div>
+    <div id="primary-nav">
+      <% if current_user %>
+          <%= link_to "New post", new_user_post_url(current_user), :class => "link" %> |
+          <%= link_to "Profile", "#", :class => "link" %> |
+          <%= link_to "Logout", user_session_url, :method => :delete, :class => "link" %>
+      <% else %>
+          <%= link_to "Login", login_url%>
+      <% end %>
+    </div>
+  </div>
+  <div id="content">
+    <div id="left">
+      <%= render :partial => "layouts/flash_messages" %>
+      <%= yield %>
+    </div>
+    <div id="right">
+      <%= yield :right %>
+    </div>
+  </div>
+  <div id="footer"></div>
+</div>
+</body>
+</html>

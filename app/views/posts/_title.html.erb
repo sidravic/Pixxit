@@ -1,0 +1,3 @@
+<% content_for :title do %>
+    <%= link_to @user.profile.blog_name, profile_view_url(@user.slug), :class => "link" %>
+<% end %>

@@ -1,0 +1,15 @@
+<%= render :partial => "title" %>
+
+<div id="block">
+  <%= render :partial => "layouts/error_display", :locals => {:resource => @post, :main_error_msg => "Please fix these errors to proceed"} %>
+  <div class="standard-block">
+    <%= form_for :post, @post, :url => user_posts_url, :html => {:method => :post, :class => "form", :multipart => true} do |f| %>
+
+      <%= render :partial => "form", :locals => {:f => f} %>
+
+        <div class="group end-of-the-line">
+          <%= f.submit "Post", :class => "button" %>
+        </div>
+    <% end %>
+  </div>
+</div>

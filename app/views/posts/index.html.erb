@@ -1,0 +1,10 @@
+<%= render :partial => "title" %>
+
+<div class='image-set post-display'>
+  <% @posts.each do |post| %>
+      <%= render :partial => "each_post", :locals =>{:post => post } %>
+  <% end %>
+
+</div>
+
+

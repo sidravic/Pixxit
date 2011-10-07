@@ -1,0 +1,33 @@
+<div class='error-display'>
+  <% if resource.errors.any? %>
+      <div  class='error-list translucent'>
+        <ul>
+          <p><strong> <%= main_error_msg  if main_error_msg.present? %> </strong></p>
+          <% resource.errors.full_messages.each do |message|  %>
+              <li> <%= message %> </li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+</div>
+
+<style>
+  .error-display{
+      margin-top:2em;
+  }
+    .error-list{
+        background: none repeat scroll 0 0 #9A111A;
+        border: 2px solid #CE0000;
+        color: white;
+        margin: 10px 0 20px;
+        padding: 10px 20px;
+        text-shadow: none !important;
+    }
+
+    .error-list ul li{
+        list-style-type: disc;
+        margin-left: 20px;
+
+    }
+</style>
+

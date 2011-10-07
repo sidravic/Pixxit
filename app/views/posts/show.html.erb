@@ -1,0 +1,11 @@
+<% content_for :title do %>
+    <%= link_to @user.profile.blog_name, profile_view_url(@user.slug), :class => "link" %>
+<% end %>
+
+
+<p>
+  <%= link_to "Back to posts", user_posts_url(@user), :class => "link" %>
+</p>
+
+<%= render :partial => "each_post", :locals => {:post => @post} %>
+

@@ -1,0 +1,47 @@
+<div id='photo-set'>
+
+  <div id='photo-description' class='round'>
+    <div id="manage-links">
+      <%= link_to "Hide Text", "#", :class => 'hide-text' %>
+      <% if photo_set_owner?(post) %>
+          | <%= link_to "Delete", user_post_url(@user, post), :method => :delete, :confirm =>"Are you sure you want to delete this post? There is no undo?" %> |
+          <%= link_to "Edit", edit_user_post_url(@user,post) %> |
+          <% unless post.published? %>
+              <%= link_to "Publish", publish_user_post_url(@user, post), :method => :put %>
+          <% else %>
+              <%= link_to "Unpublish", unpublish_user_post_url(@user, post),:method => :put %>
+          <% end %>
+      <% end %>
+    </div>
+    <div class="clear"></div>
+
+    <div id='photo-title' class='hideable'>
+      <h3>
+        <%= link_to post.title, user_post_url(@user, post), :class => 'h3-link' %>
+      </h3>
+    </div>
+    <div id='photo-body' class='hideable'>
+      <% if posts_home?  %>
+          <%= truncate(post.description, :length => 500, :omission => "...") %>
+      <% else %>
+          <%= post.description %>
+      <% end  %>
+    </div>
+    <div id='photo-timestamp' class='hideable'> <em>-<%= post.created_at.strftime("%d %B %Y") %></em></div>
+  </div>
+
+
+  <% if posts_home? %>
+      <div id='photo-navigator'>
+        <%  post.images.each_with_index do |img, index|%>
+            <%= link_to "o", "#", :class => "photo-nav post-#{post.id} image-#{index}"   %>
+        <% end %>
+      </div>
+  <% end %>
+
+  <div id='photo'>
+    <%= render :partial => "display_photos", :locals => {:post => post} %>
+  </div>
+
+  <div class='clear'></div>
+</div>

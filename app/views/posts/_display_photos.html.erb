@@ -1,0 +1,7 @@
+<% post.images.each_with_index do  |img, index| %>
+    <% if index == 0 || !posts_home?%>
+        <%= image_tag img.photo(:large), :width => "900", :class => "image post post-#{post.id} image-#{index} shadow" %>
+    <% else %>
+        <%= image_tag img.photo(:large), :width => "900", :class => "image post post-#{post.id} image-#{index} hidden shadow" %>
+    <% end %>
+<% end %>

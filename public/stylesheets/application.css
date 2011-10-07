@@ -1,0 +1,246 @@
+body{
+    background:#000;
+    color: #FFF;
+    font-size: 17px;
+    font-family: Helvetica;
+}
+
+#container{
+    width:920px;
+    margin:auto;
+}
+
+#header{
+    top:0;
+    left:0;
+    width:100%;
+    min-height:30px;
+    max-height:30px;
+    background:#2D2D2D;
+    position:fixed;
+    color:#FFF;
+    font-weight:normal;
+    opacity:0.8;
+    z-index:100;
+
+}
+
+#blog-title{
+    padding:5px;
+    width:50%;
+    float:left;
+}
+
+.clear{
+    clear:both;
+}
+
+#footer{
+    bottom:0;
+    right:0;
+    width:100%;
+    min-height:30px;
+    max-height:30px;
+    background:#2D2D2D;
+    position:fixed;
+    color:#FFF;
+    font-weight:normal;
+    opacity:0.8;
+    z-index:100;
+}
+
+.form label.label, .form input.text_field, .form textarea.text_area {
+    font-size: 14px;
+    padding: 1px 0;
+    margin: 0;
+}
+
+
+.form input.text_field, .form textarea.text_area {
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.form .group {
+    margin-bottom: 15px;
+}
+
+.standard-block{
+    width:50%;
+    min-height:150px;
+    background:#2D2D2D;
+    color:#FFF;
+    padding:10px;
+    margin:auto;
+    margin-top:4em;
+}
+
+.translucent{
+    opacity:0.8;
+}
+
+#flash-messages{
+    margin-top:2em;
+    width:100%;
+    height:30px;
+
+}
+
+.flash-error{
+    background: none repeat scroll 0 0 #9A111A;
+    border: 2px solid #CE0000;
+    color: white;
+    margin: 10px 0 20px;
+    padding: 10px 20px;
+    text-shadow: none !important;
+    text-align:center;
+    opacity:0.8;
+}
+
+.flash-message{
+    background: none repeat scroll 0 0 #006400;
+    border: 2px solid #006455;
+    color: white;
+    margin: 10px 0 20px;
+    padding: 10px 20px;
+    text-shadow: none !important;
+    text-align:center;
+}
+
+#primary-nav{
+    float:right;
+    padding:5px;
+}
+
+#primary-nav a{
+    color:#fff;
+    text-decoration:none;
+}
+
+
+
+#manage-links a{
+    display:inline-block;
+
+    color:#AAA;
+    text-decoration:none;
+    font-size:12px;
+}
+
+#manage-links a:hover{
+    display:inline-block;
+
+    color:#999;
+    text-decoration:underline;
+    font-size:12px;
+}
+
+#photo-timestamp{
+    text-indent:35px;
+    font-size:14px;
+    font-weight:normal;
+    margin-top:10px;
+
+}
+
+#photo-navigator{
+    background:black;
+    color:#FFF;
+    background: black;
+    color: white;
+    position: absolute;
+    z-index: 100;
+    padding: 5px;
+}
+
+#photo-navigator a{
+    text-decoration:none;
+    color:#ccc;
+}
+
+#photo-navigator a:hover{
+    text-decoration:none;
+    color:#ccc;
+    font-weight:bold;
+
+}
+
+#primary-nav a:hover{
+    color:#EEE;
+}
+
+
+.image-set{
+    width:100%;
+}
+
+#photo{
+    width:100%;
+    position:relative;
+}
+
+#photo-description{
+    width:15%;
+    z-index:90;
+    position:absolute;
+    margin-left: 800px;
+    margin-top: 20px;
+    padding: 22px 22px 22px 22px;
+    background: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    overflow-x: hidden;
+    color:#000;
+    opacity:0.9;
+}
+
+.round{
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+h3{
+    font-weight: normal;
+    letter-spacing: -1px;
+    color: #666;
+}
+
+
+#photo-set{
+    margin-top:50px;
+}
+
+.form input.text_field{
+    padding:0.1em 0 0.1em 0.2em;
+}
+
+.form input.text_area{
+    padding:0.1em 0 0.1em 0.2em;
+}
+
+.hidden{
+    display:none;
+}
+
+.link{
+    text-decoration:none;
+    color:#CCC;
+    font-size:12px;
+}
+
+.link:hover{
+    text-decoration:underline;
+}
+
+.h3-link{
+    font-weight: normal;
+    letter-spacing: -1px;
+    color: #666;
+    text-decoration:none;
+}
+
+.h3-link:hover{
+
+    text-decoration:underline;
+}

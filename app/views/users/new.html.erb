@@ -1,0 +1,30 @@
+<div id="block">
+  <%= render :partial => "layouts/error_display", :locals => {:resource => @user, :main_error_msg => "Please fix these errors to proceed"} %>
+  <div class="standard-block">
+    <%= form_for :user, @user, :url => users_url, :html => {:class => "form"} do |f| %>
+        <div class="group">
+          <label class="label"> Name </label>
+          <%= f.text_field :name, :class => "text_field" %>
+        </div>
+
+        <div class="group">
+          <label class="label"> Email </label>
+          <%= f.text_field :email, :class => "text_field" %>
+        </div>
+
+        <div class="group">
+          <label class="label"> Password </label>
+          <%= f.password_field :password, :class => "text_field" %>
+        </div>
+
+        <div class="group">
+          <label class="label"> Password Confirmatiom </label>
+          <%= f.password_field :password_confirmation, :class => "text_field" %>
+        </div>
+
+        <div class="group">
+          <%= f.submit "Sign up", :class => "button" %>
+        </div>
+    <% end %>
+  </div>
+</div>

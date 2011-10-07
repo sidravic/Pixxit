@@ -1,0 +1,20 @@
+<html>
+<head>
+  <title>
+    Activation Email | Night Sky
+  </title>
+
+  <body>
+  <p> Hi <%= @user.name %>, </p>
+    <p>
+      Congratulations your account has been created. Please click the link below to activate your account.
+      <%= link_to "Activate your account", activate_users_url(:token => @user.perishable_token) %>
+    </p>
+
+    <p> Regards <br/>
+       PhotoBlog Team
+    </p>
+  </body>
+
+</head>
+</html>
